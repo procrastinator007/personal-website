@@ -6,7 +6,7 @@
     .about-containers{
         flex-wrap: wrap;
     }
-     
+         
 }
 
 @media screen and (max-width:1200px){
@@ -19,7 +19,7 @@
 
     #experience,
     .experience-details-container{
-        margin-top:2rem;
+        padding-top:2rem;
     }
 
     #profile,
@@ -32,18 +32,25 @@
     section,
     .section-container{
         height: fit-content;
+        
     }
     section{
-        margin: 0 5%;
+        padding: 0 5%;
+       
     }
     .section_pic-container{
         width:275px;
-        height:275px;
-        margin: 0 auto 2rem;
+        height:auto;
+        padding: 0 auto 2rem;
+        margin: 0 auto; /* Center the image */
     }
 
     .about-container{
-        margin-top: 0;
+        padding-top: 0;
+        
+    }
+    .profile-title{
+     text-align: left;   
     }
 }
 
@@ -52,25 +59,56 @@
     footer{
         height:40vh;
     }
-
+    #logo{
+        width: 100px; /* Adjust the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    position: relative; /* Positioning relative to its container */
+    top: 0px; /* Adjust the distance from the top */
+    left: -25px; /* Adjust the distance from the left */
+    z-index: 10; /* Ensure it stays above other elements */
+    }
     #profile{
         height:83vh;
         margin-bottom: 0;
+       
+        
+        margin: 0;
+         padding: 0;
     }
+   
     article{
         font-size: 1rem;
     }
     footer nav{
         height: fit-content;
-        margin-bottom: 2rem;
+        padding-bottom: 2rem;
     }
     .about-container,
     .contact-info-upper-container,
     .btn-container{
         flex-wrap: wrap;
+        justify-content: flex-start; /* Center all items */
+        gap: 1.5rem; /* Add space between the containers */
+        text-align: left;
+        width: 100%; /* Ensure it spans the container */
+        padding: 0 0 0 0; /* Optional: Add side padding for smaller screens */
+        align-self: flex-start;
     }
+    
+    .about-pic {
+        width: 50vw; /* Make the image size relative to the screen width */
+        height: 50vw; /* Maintain a square aspect ratio */
+        border-radius: 50%; /* Ensure the circular shape */
+        margin: 0 auto; /* Center the image */
+        object-fit: cover; /* Prevent distortion */
+    }
+    .details-container {
+        width: 80%; /* Adjust the width to make it fit the screen */
+        text-align: left; /* Center align the text inside */
+    }
+
     .contact-info-container{
-        margin: 0;
+        padding: 0;
     }
     .contact-info-container p,
     .nav-links li a{
@@ -79,21 +117,29 @@
     .experience-sub-titles{
         font-size: 1.25rem;
     }
-    .logo{
-        font-size:1.5rem;
+    #logo{
+        width: 100px; /* Adjust the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    position: relative; /* Positioning relative to its container */
+    top: 0px; /* Adjust the distance from the top */
+    left: -25px; /* Adjust the distance from the left */
+    z-index: 10; /* Ensure it stays above other elements */
     }
     .nav-links{
         flex-direction: column;
         gap:0.5rem;
-        text-align: center;
+        text-align: auto;
     }
     .section_pic-container{
-        width: auto;
-        height:46vw;
-        justify-content: center;
+        width: 60vw; /* Adjust size dynamically for smaller screens */
+        height: auto; /* Maintain the aspect ratio */
+        margin: 0 auto; /* Center the image */
     }
     .section_text_p2{
-        font-size: 1.25rem;
+        font-size: 1rem;
+    }
+    .section_text_p1{
+        font-size: 1rem;
     }
     .title{
         font-size:2rem;

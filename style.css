@@ -1,5 +1,59 @@
 /* General */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Orbitron:wght@400..900&family=Playwrite+ES&display=swap');
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes textOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes textIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+section {
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+#rotating-text {
+    display: inline-block;
+    animation: textIn 2.5s ease-out forwards; /* Initially fade in */
+    font-weight: bold; /* Make it visually stand out */
+}
+
+
+#profile {
+    animation: fadeIn 2s ease-in-out; /* Animation duration: 2 seconds */
+    background: linear-gradient(to bottom, #BBE6F1, #FFF9A6); /* Light Blue to Light Yellow */
+}
 
 
 *{
@@ -8,35 +62,44 @@
 }
 
 body {
-    font-family: "Poppins", serif;
+    transition: background-color 1s ease-in-out; /* Smooth transition between sections */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevents any horizontal scrolling */
 }
 
-.poppins-light {
-    font-family: "Poppins", serif;
-    font-weight: 300;
+
+
+.playwrite-es {
+    font-family: "Playwrite ES", serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: italic;
+  }
+  .caveat {
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700px;
+    font-style: normal;
+  }
+  .orbitron> {
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
     font-style: normal;
   }
   
-  .poppins-regular {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .poppins-medium {
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .poppins-semibold {
-    font-family: "Poppins", serif;
-    font-weight: 600;
-    font-style: normal;
-  }
+
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevents any horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
   }
 
   p{
@@ -58,6 +121,8 @@ nav{
     justify-content: space-around;
     align-items: center;
     height:17vh;
+    background-color: #BBE6F1; /* Light Blue */
+    transition: background-color 1s ease-in-out;
 }
 
 .nav-links {
@@ -70,6 +135,10 @@ a {
     color: black;
     text-decoration: none;
     text-decoration-color: white;
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: italic;
 }
  
 a:hover{
@@ -82,7 +151,14 @@ a:hover{
 .logo{
     font-size: 1rem;
 }
-
+#logo {
+    width: 100px; /* Adjust the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    position: relative; /* Positioning relative to its container */
+    top: 0px; /* Adjust the distance from the top */
+    left: -130px; /* Adjust the distance from the left */
+    z-index: 10; /* Ensure it stays above other elements */
+}
 .logo:hover{
     cursor:default;
 }
@@ -172,10 +248,11 @@ a:hover{
 
 section{
     padding-top: 4vh;
-    height: 96vh;
-    margin: 0 10rem;
+    height: 100vh;
+    padding: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
+    
 }
 
 .section-container{
@@ -183,46 +260,79 @@ section{
 }
 
 /* Profile Section*/
-#profile{
-    display: flex;
-    justify-content: center;
+#profile {
     gap: 5rem;
-    height: 80vh;
+    background-image: url('./assets/IMG_1038.png'); /* Path to your uploaded image */
+    background-size: cover; /* Ensures the image fills the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 100vh; /* Ensures the section takes up the full viewport height */
+    width: 100vw; /* Spans the full viewport width */
+    display: flex; /* To align content properly */
+    justify-content: left; /* Center text horizontally */
+    align-items: left; /* Center text vertically */
+    margin: 0; /* Removes any potential default margins */
+    padding: 0; /* Removes padding */
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
+    background-color: #BBE6F1; /* Light Blue */
+    transition: background-color 1s ease-in-out;
 }
+
 
 .section_pic-container{
     display: flex;
     height: 400px;
     width: 400px;
-    margin: auto 0;
+    margin: auto ;
 }
 
 .section_text{
-    align-self: center;
-    text-align: center;
+    align-self: auto;
+    text-align: left;
+    margin-left: 5rem;
 }
 
 .section_text p {
     font-weight: 600;
+    text-align: left;
 }
 
 .section_text_p1{
-    text-align: center;
+    text-align: left;
+    padding-top: 5rem; 
+    font-size: 2rem;
+    font-family: "Playwrite ES", serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: italic;
+    
 }
  
 .section_text_p2{
     font-size: 1.75rem;
     margin-bottom: 1rem;
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    display: inline-flex;
+    padding-left: 1rem;
 }
 
 .title{
-    font-size: 3rem;
     text-align: center;
+    padding-left: 1rem;
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    font-size: 4rem;
+    
 }
 
 #social-container{
     display:flex;
-    justify-content: center;
+    justify-content: left;
     margin-top: 1rem;
     gap: 1rem;
 }
@@ -236,7 +346,6 @@ section{
 /* Button */
 .btn-container{
     display: flex;
-    justify-content: center;
     gap: 1rem;
 }
 
@@ -249,37 +358,40 @@ section{
 }
 
 .btn-color-1, .btn-color-2{
-    border:rgb(53,53,53) 0.1rem solid;
+    border: #1ea58a 0.1rem solid; /* Soft Green */
 }
 
 .btn-color-1:hover, .btn-color-2:hover {
     cursor:pointer;
 }
 
-.btn-color-1, .btn-color-2:hover {
-    background: rgb(53,53,53);
-    color: white;
+.btn-color-1{
+    background: white;
+    color: #1ea58a;
 }
 .btn-color-1:hover {
     background: rgb(0,0,0);
 }
 .btn-color-2{
-    background: none;
+    background:#7dcabc;
 }
 .btn-color-2:hover{
-    border: rgb(255,255,255) 0.1rem solid;
+    border: #1ea58a 0.1rem solid;
+    background: black;
+    color: #1ea58a;
 }
 
 
 /*about me section*/
 #about{
     position:relative;
+    background: linear-gradient(to bottom, #fffee3, #BBE6F1); /* Light Yellow to Light Blue */
+    transition: background-color 1s ease-in-out;
 }
 
 .about-container{
     gap: 2rem;
     margin-bottom: 2rem;
-    margin-top: 2rem;
 }
 
 .about-details-container{
@@ -293,28 +405,35 @@ section{
 }
 
 .about-pic{
-    border-radius:2rem;
+    border-radius: 50%; /* Makes the image circular */
+    width: 350px; /* Set the width to define the size */
+    height: 335px; /* Match the height to width for a perfect circle */
+    object-fit: cover; /* Ensures the image scales properly within the circle */
 }
 
 .arrow{
     position: absolute;
-    right: -5rem;
-    bottom:2.5rem;
+    right: 3rem;
+    bottom:2rem;
 }
 
 .details-container{
     padding: 1.5rem;
     flex:1;
-    background: white;
+    background: black;
     border-radius: 2rem;
-    border: rgb(53,53,53) 0.1rem solid;
-    border-color: rgb(163,163,163);
+    border: #94F9C6 0.1rem solid;
     text-align: center;
-}
+    color: #1ea58a;
 
+}
+.about-h3{
+    color: #1ea58a;
+}
 .section-container{
     gap: 4rem;
     height: 80%;
+    color: #1ea58a;
 }
 
 .section_pic-container{
@@ -323,9 +442,13 @@ section{
     margin: auto 0;
 }
 
+
  /*experience */
  #experience{
     position: relative;
+    background: linear-gradient(to bottom, #BBE6F1, #fffee3); /* Light Blue to Light Yellow */
+    transition: background-color 1s ease-in-out;
+    
  }
 
  .experience-sub-title{
@@ -339,8 +462,20 @@ section{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: 3rem;
+ }
+ .experience-container-1{
+    background:#7dcabc;
  }
 
+ .experience-container-2{
+    background: white;
+    color: #1ea58a;
+ }
+
+ .experience-h3{
+    color: whitesmoke;
+ }
  .article-container{
     display: flex;
     text-align: initial;
@@ -363,6 +498,8 @@ section{
  /*projects*/
  #projects{
     position: relative;
+    background: linear-gradient(to bottom, #fffee3, #BBE6F1); /* Light Yellow to Light Blue */
+    transition: background-color 1s ease-in-out;
  }
 
  .color-container{
@@ -385,23 +522,37 @@ section{
     border-color: rgb(255,255,255);
  }
 
+ .waiting-h3 {
+    text-align: center; /* Center align the text inside the element */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    flex-direction: column; /* Ensure content is stacked vertically if needed */
+    height: 100%; /* Stretch to fill the container height */
+    margin-top: 2.5rem; 
+    margin-left: 5rem; /* Remove any extra margin */
+}
+
+
  /*contact*/
  #contact{
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 70vh;
+    background-color: #BBE6F1; /* Light Blue */
+    transition: background-color 1s ease-in-out;
  }
 
  .contact-info-upper-container{
     display: flex;
     justify-content: center;
     border-radius: 2rem;
-    border: rgb(53,53,53) 0.1rem solid;
-    border-color: rgb(163,163,163);
+    border: #1ea58a 0.1rem solid; /* Soft Green */
     background: (250,250,20);
     margin: 2rem auto;
     padding: 0.5rem;
+    background:#7dcabc;
 }
 
 .contact-info-container{
@@ -410,6 +561,7 @@ section{
     justify-content: center;
     gap:0.5rem;
     margin: 1rem;
+    background:#7dcabc;
 }
 
 .contact-info p {
@@ -423,10 +575,11 @@ section{
 /*footer */
 footer{
     height:26vh;
-    margin: 0 1rem;
-
+    padding: 0 1rem;
+    background-color: #BBE6F1;
 }
 
 footer p{
     text-align: center;
+    background-color: #BBE6F1;
 }
