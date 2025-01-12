@@ -345,7 +345,7 @@ section{
 
 /* Button */
 .btn-container{
-    display: flex;
+    display: absolute;
     gap: 1rem;
     
 }
