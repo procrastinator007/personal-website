@@ -6,6 +6,9 @@
     .about-containers{
         flex-wrap: wrap;
     }
+    .btn-container{
+        padding-left: 4rem;
+    }
          
 }
 
